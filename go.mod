@@ -3,12 +3,12 @@ module github.com/xomcar/radio-napoli
 go 1.20
 
 require (
+	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/eiannone/keyboard v0.0.0-20220611211555-0d226195f203
 	github.com/faiface/beep v1.1.0
 )
 
 require (
-	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be // indirect
 	github.com/hajimehoshi/go-mp3 v0.3.0 // indirect
 	github.com/hajimehoshi/oto v0.7.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect

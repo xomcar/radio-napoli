@@ -1,11 +1,10 @@
-build: mac win linux
+build: clean mac win
 run:
 	go run main.go
 mac:
-	GOARCH=arm64 GOOS=darwin go build -ldflags "-s -w" -o bin/mac/napoli main.go
+	CGO_ENABLED=1 GOARCH=arm64 GOOS=darwin go build -ldflags "-s -w" -o bin/mac/napoli-arm64 main.go
+	CGO_ENABLED=1 GOARCH=amd64 GOOS=darwin go build -ldflags "-s -w" -o bin/mac/napoli-amd64 main.go
 win:
-	GOARCH=amd64 GOOS=windows go build -ldflags "-s -w" -o bin/win/napoli.exe
-linux:
-	GOARCH=amd64 GOOS=linux go build -ldflags "-s -w" -o bin/linux/napoli
+	CGO_ENABLED=1 GOARCH=amd64 GOOS=windows go build -ldflags "-s -w" -o bin/win/napoli.exe
 clean:
 	rm -rf bin
